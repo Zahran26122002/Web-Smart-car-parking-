@@ -1,0 +1,33 @@
+{% extends 'base2.html' %} 
+
+{% block content %}
+{% load static %}
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const logoutMessage = urlParams.get('logout_message');
+
+    if(logoutMessage){
+        alert(logoutMessage);
+    }
+</script>
+<style>
+    h1{
+        color: maroon;
+        font-family:'Courier New', Courier, monospace;
+    }
+</style>
+<b style="background-color: lightblue;">
+
+<div class="container">
+    <h1>Welcome, {{key}}</h1><br><br>
+    <h2>Name: {{key2}}</h2><br><br>
+    <h2>Email: {{key4}}</h2><br><br>
+    <h2>Phone: {{key5}}</h2><br><br>
+    <h2>VehicleNumber: {{key6}}</h2>
+    </div>
+    
+        <!-- Your HTML content here -->
+    </body>
+    
+    {% endblock %}

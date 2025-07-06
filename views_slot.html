@@ -1,0 +1,33 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+<style>
+    h2{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: cadetblue;
+    }
+</style>
+
+<div class="container">
+<h2>Parking Slots</h2>
+<ul class="list-group list-group-horizontal">
+    {% for slot in slots %}
+        <li class="list-group-item">
+            {{ slot }}
+            {% if slot.is_available %}
+                <a href="{% url 'book_slot' slot_id=slot.id %}">Book Now</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul><br><br><br>
+
+<h2>Booked Slots</h2>
+<ul class="list-group list-group-horizontal">
+    <!-- {% for booked_slot in booked_slots %} -->
+        <li class="list-group-item">{{ booked_slot }}</li>
+    <!-- {% endfor %} -->
+</ul>
+</div>
+
+{% endblock %}
